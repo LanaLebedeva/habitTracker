@@ -13,6 +13,8 @@
     <string name="count">count</string>
     <string name="data">data</string>
 
+    <string name="habbit_in_period">%1$d times in %2$d days</string>
+
     <string-array name="priority">
         <item>High</item>
         <item>Middle</item>

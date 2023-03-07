@@ -69,7 +69,7 @@ class HabitViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         name.text = habit.name
         color.setBackgroundColor(habit.color)
         description.text = habit.description
-        periodicity.text = habit.count.toString() + " " + habit.date.toString()
+        periodicity.text = view.resources.getString(R.string.habbit_in_period, habit.count, habit.date)
         priority.text = habit.priority.toString()
         type.text = habit.type.toString()
     }

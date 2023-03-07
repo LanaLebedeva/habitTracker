@@ -16,6 +16,7 @@ import com.github.lanalebedeva.habittracker.data.Type
 import com.github.lanalebedeva.habittracker.databinding.FragmentHabitBinding
 import com.github.lanalebedeva.habittracker.viewmodel.HabitsViewModel
 import java.time.Instant
+import java.util.Random
 
 
 class HabitFragment : Fragment() {
@@ -35,6 +36,7 @@ class HabitFragment : Fragment() {
         _binding = null
     }
 
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -46,9 +48,9 @@ class HabitFragment : Fragment() {
                     description = "well do it",
                     count = 5,
                     date = 5,
-                    color = Color.BLUE,
-                    priority = Priority.LOW,
-                    type = Type.GOOD,
+                    color = if (Random().nextBoolean()) Color.GREEN else Color.RED,
+                    priority = if (Random().nextBoolean()) Priority.LOW else Priority.HIGHT,
+                    type = if (Random().nextBoolean()) Type.GOOD else Type.BAD,
                 )
             )
             Log.d("FRRR+", "viewModel = ${viewModel.habits.value.toString()}")
